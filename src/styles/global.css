@@ -1,0 +1,78 @@
+:root {
+  --bg-primary: #0D0D0D;
+  --bg-card: #1A1A2E;
+  --bg-elevated: #16213E;
+  --bg-surface: #1E2340;
+  --accent-pink: #E91E8C;
+  --accent-pink-dark: #C2185B;
+  --accent-pink-glow: rgba(233, 30, 140, 0.3);
+  --accent-blue: #00D9F5;
+  --accent-yellow: #FFD700;
+  --accent-red: #FF4458;
+  --text-primary: #FFFFFF;
+  --text-secondary: #D1D5DB;
+  --text-muted: #6B7280;
+  --border: rgba(255, 255, 255, 0.08);
+  --gradient-card: linear-gradient(to top, rgba(0, 0, 0, 0.92) 0%, rgba(0, 0, 0, 0.4) 40%, transparent 70%);
+  --gradient-brand: linear-gradient(135deg, #E91E8C 0%, #9C27B0 100%);
+  --radius-card: 20px;
+  --radius-btn: 50%;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --shadow-card: 0 20px 60px rgba(0, 0, 0, 0.6);
+  --shadow-btn: 0 4px 20px rgba(233, 30, 140, 0.4);
+  --nav-height: 64px;
+  --top-nav-height: 60px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  height: 100%;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
+#root {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Prevent text selection during swipe */
+.no-select {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--bg-elevated);
+  border-radius: 2px;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}

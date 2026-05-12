@@ -1,0 +1,65 @@
+.action-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 12px 0;
+  flex-shrink: 0;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  position: relative;
+}
+
+.action-btn:active {
+  transform: scale(0.9) !important;
+}
+
+.action-btn--pass {
+  width: 60px;
+  height: 60px;
+  background: var(--bg-elevated);
+  color: var(--accent-red);
+  border: 2px solid rgba(255, 68, 88, 0.2);
+  box-shadow: 0 4px 20px rgba(255, 68, 88, 0.15);
+}
+
+.action-btn--pass:hover {
+  background: rgba(255, 68, 88, 0.1);
+  box-shadow: 0 4px 24px rgba(255, 68, 88, 0.3);
+  transform: scale(1.05);
+}
+
+.action-btn--superlike {
+  width: 52px;
+  height: 52px;
+  background: var(--bg-elevated);
+  color: var(--accent-blue);
+  border: 2px solid rgba(0, 217, 245, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 217, 245, 0.15);
+}
+
+.action-btn--superlike:hover {
+  background: rgba(0, 217, 245, 0.1);
+  box-shadow: 0 4px 24px rgba(0, 217, 245, 0.3);
+  transform: scale(1.05);
+}
+
+.action-btn--like {
+  width: 60px;
+  height: 60px;
+  background: var(--gradient-brand);
+  color: white;
+  border: none;
+  box-shadow: var(--shadow-btn);
+}
+
+.action-btn--like:hover {
+  box-shadow: 0 6px 28px rgba(233, 30, 140, 0.6);
+  transform: scale(1.05);
+}
