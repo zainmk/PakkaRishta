@@ -1,0 +1,158 @@
+.my-profile {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.my-profile__hero {
+  background: var(--bg-elevated);
+  padding: 32px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.my-profile__avatar {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background: var(--bg-surface);
+  border: 3px solid var(--accent-pink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.my-profile__initial {
+  font-size: 38px;
+  font-weight: 700;
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.my-profile__preview-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.my-profile__preview-age {
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+.my-profile__form {
+  padding: 24px 16px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.my-profile__section-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 8px;
+}
+
+.my-profile__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.my-profile__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.my-profile__label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.my-profile__input {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  font-size: 15px;
+  color: var(--text-primary);
+  font-family: inherit;
+  width: 100%;
+  transition: border-color 0.2s;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.my-profile__input:focus {
+  border-color: var(--accent-pink);
+}
+
+.my-profile__input::placeholder {
+  color: var(--text-muted);
+  opacity: 0.6;
+}
+
+/* Date input colour fix on dark background */
+.my-profile__input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.6);
+}
+
+.my-profile__textarea {
+  resize: none;
+  line-height: 1.5;
+}
+
+.my-profile__hint {
+  font-size: 11px;
+  color: var(--text-muted);
+  opacity: 0.7;
+}
+
+.my-profile__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.my-profile__tag {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 5px 12px;
+  border-radius: 20px;
+  background: rgba(233, 30, 140, 0.15);
+  color: var(--accent-pink);
+  border: 1px solid rgba(233, 30, 140, 0.3);
+}
+
+.my-profile__save {
+  margin-top: 8px;
+  width: 100%;
+  padding: 16px;
+  border-radius: var(--radius-md);
+  font-size: 16px;
+  font-weight: 600;
+  background: var(--gradient-brand);
+  color: white;
+  box-shadow: var(--shadow-btn);
+  transition: opacity 0.2s, transform 0.15s;
+}
+
+.my-profile__save:active {
+  transform: scale(0.97);
+}
+
+.my-profile__save--saved {
+  background: #2ecc71;
+  box-shadow: 0 4px 20px rgba(46, 204, 113, 0.4);
+}
