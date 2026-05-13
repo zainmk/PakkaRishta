@@ -2,7 +2,7 @@ import { useState } from 'react'
 import TopNav from './components/TopNav'
 import BottomNav from './components/BottomNav'
 import DiscoverScreen from './screens/DiscoverScreen'
-import MatchesScreen from './screens/MatchesScreen'
+import MessagesScreen from './screens/MessagesScreen'
 import ProfileScreen from './screens/ProfileScreen'
 import './styles/global.css'
 import './App.css'
@@ -19,7 +19,7 @@ export default function App() {
           <DiscoverScreen onViewProfile={setSelectedProfile} />
         )}
         {(activeScreen === 'matches' || activeScreen === 'messages' || activeScreen === 'profile') && (
-          <MatchesScreen onViewProfile={setSelectedProfile} />
+          <MessagesScreen onViewProfile={setSelectedProfile} />
         )}
       </main>
       <BottomNav active={activeScreen} onChange={setActiveScreen} />
