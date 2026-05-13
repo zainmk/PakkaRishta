@@ -15,7 +15,8 @@ export default function App() {
   const [matches, setMatches] = useState([])
   const [myProfile, setMyProfile] = useState({
     firstName: '', lastName: '', dob: '', height: '',
-    occupation: '', location: '', bio: '', interests: '',
+    occupation: '', location: '', citizenship: '', ethnicity: '',
+    maritalStatus: '', education: '', bio: '', interests: '',
   })
 
   const handleMatch = (profile) => {

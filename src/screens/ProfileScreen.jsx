@@ -82,6 +82,62 @@ export default function ProfileScreen({ profile, onClose }) {
               <p className="profile-screen__field-value">{profile.distance}</p>
             </div>
           </div>
+
+          {profile.citizenship && (
+            <div className="profile-screen__field">
+              <span className="profile-screen__field-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/>
+                </svg>
+              </span>
+              <div>
+                <p className="profile-screen__field-label">Citizenship</p>
+                <p className="profile-screen__field-value">{profile.citizenship}</p>
+              </div>
+            </div>
+          )}
+
+          {profile.ethnicity && (
+            <div className="profile-screen__field">
+              <span className="profile-screen__field-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                </svg>
+              </span>
+              <div>
+                <p className="profile-screen__field-label">Ethnicity</p>
+                <p className="profile-screen__field-value">{profile.ethnicity}</p>
+              </div>
+            </div>
+          )}
+
+          {profile.maritalStatus && (
+            <div className="profile-screen__field">
+              <span className="profile-screen__field-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                </svg>
+              </span>
+              <div>
+                <p className="profile-screen__field-label">Marital Status</p>
+                <p className="profile-screen__field-value">{profile.maritalStatus}</p>
+              </div>
+            </div>
+          )}
+
+          {profile.education && (
+            <div className="profile-screen__field">
+              <span className="profile-screen__field-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                </svg>
+              </span>
+              <div>
+                <p className="profile-screen__field-label">Education</p>
+                <p className="profile-screen__field-value">{profile.education}</p>
+              </div>
+            </div>
+          )}
         </div>
 
         <div className="profile-screen__bio-section">

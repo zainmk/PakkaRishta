@@ -2,11 +2,15 @@ import './ProfileCard.css'
 
 export default function ProfileCard({ profile, isTop, onInfoClick }) {
   const fields = [
-    { label: 'Age',        value: `${profile.age}` },
-    { label: 'Height',     value: profile.height },
-    { label: 'Occupation', value: profile.occupation },
-    { label: 'Location',   value: profile.location.split(',')[0] },
-  ]
+    { label: 'Age',            value: `${profile.age}` },
+    { label: 'Height',         value: profile.height },
+    { label: 'Occupation',     value: profile.occupation },
+    { label: 'Location',       value: profile.location.split(',')[0] },
+    { label: 'Citizenship',    value: profile.citizenship },
+    { label: 'Ethnicity',      value: profile.ethnicity },
+    { label: 'Marital Status', value: profile.maritalStatus },
+    { label: 'Education',      value: profile.education },
+  ].filter(f => f.value)
 
   return (
     <div className={`profile-card ${isTop ? 'profile-card--top' : ''}`}>

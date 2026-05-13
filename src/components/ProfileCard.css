@@ -50,20 +50,20 @@
   color: var(--text-primary);
   letter-spacing: -2px;
   line-height: 1;
-  margin-bottom: 28px;
+  margin-bottom: 16px;
 }
 
 /* Fields list */
 .profile-card__fields {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px;
   flex: 1;
   justify-content: flex-start;
 }
 
 .profile-card__field {
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 600;
   color: var(--text-primary);
   line-height: 1.3;

@@ -100,6 +100,55 @@ export default function MyProfileScreen({ form, onChange }) {
           />
         </div>
 
+        <div className="my-profile__row">
+          <div className="my-profile__field">
+            <label className="my-profile__label">Citizenship</label>
+            <input
+              className="my-profile__input"
+              type="text"
+              placeholder="e.g. Pakistani"
+              value={form.citizenship || ''}
+              onChange={set('citizenship')}
+            />
+          </div>
+          <div className="my-profile__field">
+            <label className="my-profile__label">Ethnicity</label>
+            <input
+              className="my-profile__input"
+              type="text"
+              placeholder="e.g. Punjabi"
+              value={form.ethnicity || ''}
+              onChange={set('ethnicity')}
+            />
+          </div>
+        </div>
+
+        <div className="my-profile__row">
+          <div className="my-profile__field">
+            <label className="my-profile__label">Marital Status</label>
+            <select
+              className="my-profile__input"
+              value={form.maritalStatus || ''}
+              onChange={set('maritalStatus')}
+            >
+              <option value="">Select...</option>
+              <option value="Never Married">Never Married</option>
+              <option value="Divorced">Divorced</option>
+              <option value="Widowed">Widowed</option>
+            </select>
+          </div>
+          <div className="my-profile__field">
+            <label className="my-profile__label">Education</label>
+            <input
+              className="my-profile__input"
+              type="text"
+              placeholder="e.g. Bachelor's in CS"
+              value={form.education || ''}
+              onChange={set('education')}
+            />
+          </div>
+        </div>
+
         <div className="my-profile__section-label">About You</div>
 
         <div className="my-profile__field">
