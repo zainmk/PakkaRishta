@@ -12,8 +12,7 @@ export default function ProfileCard({ profile, isTop, onInfoClick }) {
       <div className="profile-card__info">
         <div className="profile-card__header">
           <h2 className="profile-card__name">
-            {profile.name[0].toUpperCase()}. {profile.lastName}
-            <span className="profile-card__age">{profile.age}</span>
+            {profile.name[0].toUpperCase()}.{profile.lastName[0].toUpperCase()}.
           </h2>
           <button className="profile-card__info-btn" aria-label="More info" onClick={(e) => { e.stopPropagation(); onInfoClick?.(profile) }}>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -23,17 +22,13 @@ export default function ProfileCard({ profile, isTop, onInfoClick }) {
             </svg>
           </button>
         </div>
-        <p className="profile-card__distance">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+        <p className="profile-card__occupation">{profile.occupation} · {profile.height}</p>
+        <p className="profile-card__city">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor">
             <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
           </svg>
-          {profile.distance}
+          {profile.location.split(',')[0]}
         </p>
-        <div className="profile-card__interests">
-          {profile.interests.slice(0, 3).map((tag) => (
-            <span key={tag} className="profile-card__tag">{tag}</span>
-          ))}
-        </div>
       </div>
     </div>
   )
