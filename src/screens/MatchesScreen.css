@@ -1,0 +1,95 @@
+.matches-screen {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 16px;
+}
+
+.matches-screen--empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.matches-screen__empty-icon {
+  font-size: 56px;
+  opacity: 0.2;
+}
+
+.matches-screen__empty-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.matches-screen__empty-sub {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.matches-screen__count {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+
+.matches-screen__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.matches-screen__card {
+  background: var(--bg-elevated);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  transition: border-color 0.15s;
+  active: border-color var(--accent-pink);
+}
+
+.matches-screen__card:active {
+  border-color: var(--accent-pink);
+}
+
+.matches-screen__card-avatar {
+  width: 100%;
+  aspect-ratio: 1;
+  background: var(--bg-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.matches-screen__card-initial {
+  font-size: 64px;
+  font-weight: 700;
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  opacity: 0.4;
+  user-select: none;
+}
+
+.matches-screen__card-info {
+  padding: 10px 12px 12px;
+  border-top: 1px solid var(--border);
+}
+
+.matches-screen__card-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.matches-screen__card-age {
+  font-size: 13px;
+  color: var(--text-muted);
+}
