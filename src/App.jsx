@@ -3,28 +3,32 @@ import TopNav from './components/TopNav'
 import BottomNav from './components/BottomNav'
 import DiscoverScreen from './screens/DiscoverScreen'
 import MatchesScreen from './screens/MatchesScreen'
+import ProfileScreen from './screens/ProfileScreen'
 import './styles/global.css'
 import './App.css'
 
-const SCREENS = {
-  discover: DiscoverScreen,
-  matches: MatchesScreen,
-  messages: MatchesScreen,
-  profile: MatchesScreen,
-}
-
 export default function App() {
   const [activeScreen, setActiveScreen] = useState('discover')
-
-  const Screen = SCREENS[activeScreen] ?? DiscoverScreen
+  const [selectedProfile, setSelectedProfile] = useState(null)
 
   return (
     <div className="app">
       <TopNav />
       <main className="app__main">
-        <Screen />
+        {activeScreen === 'discover' && (
+          <DiscoverScreen onViewProfile={setSelectedProfile} />
+        )}
+        {(activeScreen === 'matches' || activeScreen === 'messages' || activeScreen === 'profile') && (
+          <MatchesScreen onViewProfile={setSelectedProfile} />
+        )}
       </main>
       <BottomNav active={activeScreen} onChange={setActiveScreen} />
+      {selectedProfile && (
+        <ProfileScreen
+          profile={selectedProfile}
+          onClose={() => setSelectedProfile(null)}
+        />
+      )}
     </div>
   )
 }

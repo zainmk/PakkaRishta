@@ -7,7 +7,7 @@ import './CardStack.css'
 
 const MY_PHOTO = '/avatar-placeholder.svg'
 
-export default function CardStack({ profiles, onMatch }) {
+export default function CardStack({ profiles, onMatch, onViewProfile }) {
   const [currentIndex, setCurrentIndex] = useState(profiles.length - 1)
   const [matchedProfile, setMatchedProfile] = useState(null)
   const cardRefs = useRef([])
@@ -37,7 +37,11 @@ export default function CardStack({ profiles, onMatch }) {
   return (
     <div className="card-stack-container">
       <div className="card-stack">
-        {profiles.map((profile, index) => (
+        {profiles.map((profile, index) => {
+          const pointerStart = { x: 0, y: 0 }
+          const TAP_THRESHOLD = 8
+
+          return (
           <TinderCard
             ref={(el) => (cardRefs.current[index] = el)}
             key={profile.id}
@@ -46,8 +50,16 @@ export default function CardStack({ profiles, onMatch }) {
             swipeRequirementType="position"
             swipeThreshold={80}
           >
-            <div className="card-stack__card">
-              <ProfileCard profile={profile} isTop={index === currentIndex} />
+            <div
+              className="card-stack__card"
+              onPointerDown={(e) => { pointerStart.x = e.clientX; pointerStart.y = e.clientY }}
+              onClick={(e) => {
+                const dx = Math.abs(e.clientX - pointerStart.x)
+                const dy = Math.abs(e.clientY - pointerStart.y)
+                if (dx < TAP_THRESHOLD && dy < TAP_THRESHOLD) onViewProfile?.(profile)
+              }}
+            >
+              <ProfileCard profile={profile} isTop={index === currentIndex} onInfoClick={onViewProfile} />
               {index === currentIndex && (
                 <>
                   <div className="card-stack__stamp card-stack__stamp--like">LIKE</div>
@@ -56,7 +68,8 @@ export default function CardStack({ profiles, onMatch }) {
               )}
             </div>
           </TinderCard>
-        ))}
+          )
+        })}
 
         {currentIndex < 0 && (
           <div className="card-stack__empty">

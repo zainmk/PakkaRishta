@@ -1,22 +1,21 @@
 import './ProfileCard.css'
 
-export default function ProfileCard({ profile, isTop }) {
+export default function ProfileCard({ profile, isTop, onInfoClick }) {
   return (
     <div className={`profile-card ${isTop ? 'profile-card--top' : ''}`}>
-      <img
-        className="profile-card__photo"
-        src={profile.photoUrl}
-        alt={profile.name}
-        draggable={false}
-      />
+      <div className="profile-card__avatar">
+        <span className="profile-card__initials">
+          {profile.name[0].toUpperCase()}
+        </span>
+      </div>
       <div className="profile-card__gradient" />
       <div className="profile-card__info">
         <div className="profile-card__header">
           <h2 className="profile-card__name">
-            {profile.name}
+            {profile.name[0].toUpperCase()}. {profile.lastName}
             <span className="profile-card__age">{profile.age}</span>
           </h2>
-          <button className="profile-card__info-btn" aria-label="More info">
+          <button className="profile-card__info-btn" aria-label="More info" onClick={(e) => { e.stopPropagation(); onInfoClick?.(profile) }}>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <circle cx="12" cy="12" r="10"/>
               <line x1="12" y1="8" x2="12" y2="12"/>
