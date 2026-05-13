@@ -35,7 +35,7 @@
   transform: scale(1.05);
 }
 
-.action-btn--superlike {
+.action-btn--share {
   width: 52px;
   height: 52px;
   background: var(--bg-elevated);
@@ -44,7 +44,7 @@
   box-shadow: 0 4px 20px rgba(0, 217, 245, 0.15);
 }
 
-.action-btn--superlike:hover {
+.action-btn--share:hover {
   background: rgba(0, 217, 245, 0.1);
   box-shadow: 0 4px 24px rgba(0, 217, 245, 0.3);
   transform: scale(1.05);

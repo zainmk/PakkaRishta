@@ -1,6 +1,6 @@
 import './ActionButtons.css'
 
-export default function ActionButtons({ onPass, onSuperLike, onLike }) {
+export default function ActionButtons({ onPass, onShare, onLike }) {
   return (
     <div className="action-buttons">
       <button
@@ -15,12 +15,13 @@ export default function ActionButtons({ onPass, onSuperLike, onLike }) {
       </button>
 
       <button
-        className="action-btn action-btn--superlike"
-        onClick={onSuperLike}
-        aria-label="Super Like"
+        className="action-btn action-btn--share"
+        onClick={onShare}
+        aria-label="Share with family"
       >
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>
+          <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
         </svg>
       </button>
 

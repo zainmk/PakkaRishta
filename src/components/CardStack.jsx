@@ -3,6 +3,7 @@ import TinderCard from 'react-tinder-card'
 import ProfileCard from './ProfileCard'
 import ActionButtons from './ActionButtons'
 import MatchModal from './MatchModal'
+import ShareModal from './ShareModal'
 import './CardStack.css'
 
 const MY_PHOTO = '/avatar-placeholder.svg'
@@ -10,6 +11,7 @@ const MY_PHOTO = '/avatar-placeholder.svg'
 export default function CardStack({ profiles, onMatch, onViewProfile }) {
   const [currentIndex, setCurrentIndex] = useState(profiles.length - 1)
   const [matchedProfile, setMatchedProfile] = useState(null)
+  const [shareProfile, setShareProfile] = useState(null)
   const cardRefs = useRef([])
 
   const canSwipe = currentIndex >= 0
@@ -82,9 +84,16 @@ export default function CardStack({ profiles, onMatch, onViewProfile }) {
 
       <ActionButtons
         onPass={() => swipe('left')}
-        onSuperLike={() => swipe('right')}
+        onShare={() => currentIndex >= 0 && setShareProfile(profiles[currentIndex])}
         onLike={() => swipe('right')}
       />
+
+      {shareProfile && (
+        <ShareModal
+          profile={shareProfile}
+          onClose={() => setShareProfile(null)}
+        />
+      )}
 
       {matchedProfile && (
         <MatchModal
