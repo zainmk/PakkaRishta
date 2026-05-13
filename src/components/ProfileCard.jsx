@@ -1,34 +1,41 @@
 import './ProfileCard.css'
 
 export default function ProfileCard({ profile, isTop, onInfoClick }) {
+  const fields = [
+    { label: 'Age',        value: `${profile.age}` },
+    { label: 'Height',     value: profile.height },
+    { label: 'Occupation', value: profile.occupation },
+    { label: 'Location',   value: profile.location.split(',')[0] },
+  ]
+
   return (
     <div className={`profile-card ${isTop ? 'profile-card--top' : ''}`}>
-      <div className="profile-card__avatar">
-        <span className="profile-card__initials">
-          {profile.name[0].toUpperCase()}
-        </span>
-      </div>
-      <div className="profile-card__gradient" />
-      <div className="profile-card__info">
-        <div className="profile-card__header">
-          <h2 className="profile-card__name">
-            {profile.name[0].toUpperCase()}.{profile.lastName[0].toUpperCase()}.
-          </h2>
-          <button className="profile-card__info-btn" aria-label="More info" onClick={(e) => { e.stopPropagation(); onInfoClick?.(profile) }}>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <circle cx="12" cy="12" r="10"/>
-              <line x1="12" y1="8" x2="12" y2="12"/>
-              <line x1="12" y1="16" x2="12.01" y2="16"/>
-            </svg>
-          </button>
+      <button
+        className="profile-card__info-btn"
+        aria-label="More info"
+        onClick={(e) => { e.stopPropagation(); onInfoClick?.(profile) }}
+      >
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="12" y1="8" x2="12" y2="12"/>
+          <line x1="12" y1="16" x2="12.01" y2="16"/>
+        </svg>
+      </button>
+
+      <div className="profile-card__content">
+        <h1 className="profile-card__initials">
+          {profile.name[0].toUpperCase()}{profile.lastName[0].toUpperCase()}
+        </h1>
+
+        <div className="profile-card__fields">
+          {fields.map(({ label, value }) => (
+            <div key={label} className="profile-card__field">
+              <span className="profile-card__field-label">{label}</span>
+              <span className="profile-card__field-sep"> : </span>
+              <span className="profile-card__field-value">{value}</span>
+            </div>
+          ))}
         </div>
-        <p className="profile-card__occupation">{profile.occupation} · {profile.height}</p>
-        <p className="profile-card__city">
-          <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-          </svg>
-          {profile.location.split(',')[0]}
-        </p>
       </div>
     </div>
   )
